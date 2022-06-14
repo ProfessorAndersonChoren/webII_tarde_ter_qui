@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+nav#links-uteis{
+    display: flex;
+    justify-content: space-between;
+    background-color: #333333;
+    padding: 10px 0;
+}
+
+nav#links-uteis ul>li{
+    display: inline-block;
+    margin: 0 5px;
+}
+
+nav#links-uteis ul>li>a{
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+section#menu-principal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section#menu-principal span{
+    color: red;
+    font-weight: bold;
+}
+
+section#menu-principal nav{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+article#banner{
+    height: 400px;
+    background-image: url('../img/fundohomepage.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+h2{
+    text-align: center;
+}
+
+p{
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+.box-outlined{
+    width: 80vw;
+    margin: 20px auto;
+    border: 3px solid red;
+    padding: 20px;
+}
+
+.box-red{
+    background-color: red;
+    padding: 20px;
+    color: white;
+}
+
+.box-red>q{
+    display: block;
+    text-align: center;
+}
+.box-red>q::before{
+    content: "| ";
+}
+/* Botões */
+.btn{
+    background-color: transparent;
+    border: 2px solid transparent;
+    padding: 10px;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.btn-outlined-red{
+    border-color: red;
+    color: red;
+}
+
+.btn-red{
+    background-color: red;
+    color: white;
+}
