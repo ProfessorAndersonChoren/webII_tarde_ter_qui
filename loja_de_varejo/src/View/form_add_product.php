@@ -45,7 +45,7 @@
             <section class="columns-2">
                 <article>
                     <label for="cost" class="cursor-pointer">Custo de aquisição: </label>
-                    <input type="number" name="cost" id="cost">
+                    <input type="number" name="cost" id="cost" class="border border-blue-400">
                 </article>
                 <article>
                     <label for="quantity" class="cursor-pointer">Quantidade adquirida</label>
