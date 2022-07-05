@@ -16,8 +16,11 @@
                 <li class="mr-3">
                     <a href="../../index.html">Home</a>
                 </li>
-                <li>
+                <li class="mr-3">
                     <a href="#">Cadastro de produtos</a>
+                </li>
+                <li>
+                    <a href="form_add_provider.php">Cadastro de fornecedores</a>
                 </li>
             </ul>
         </nav>
