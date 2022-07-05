@@ -46,12 +46,18 @@ if ($error) { // Se o array tiver elementos
         type: 'warning'
     );
 } else { // Se o array NÃO tiver elementos
-    $product = new Product();
-    $product->barCode = $productBarCode;
-    $product->name = $productName;
-    $product->stock = $productQuantity;
-    $product->provider = new Provider();
-    $product->price = 0;
+    $product = new Product(
+        name: $productName,
+        tributes: 0.75,
+        operationCost: 0.89,
+        cost: $productCost,
+        provider: new Provider(
+            name: "Fornecedor 1"
+        ),
+        stock: $productQuantity,
+        barCode: $productBarCode,
+        lucre: 0.5
+    );
 
     Redirect::redirect('Produto cadastrado com sucesso!!!');
 }

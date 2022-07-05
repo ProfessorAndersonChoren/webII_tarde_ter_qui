@@ -8,7 +8,7 @@ use APP\Model\Validation;
 
 require_once '../../vendor/autoload.php';
 
-if(empty($_POST)){
+if (empty($_POST)) {
     Redirect::redirect(message: "Requisição inválida", type: "error");
 }
 
@@ -17,23 +17,21 @@ $providerCnpj = $_POST['providerCnpj'];
 
 $error = array();
 
-if(!Validation::validateName($providerName)){
+if (!Validation::validateName($providerName)) {
     array_push($error, "O nome do fornecedor deve conter pelo menos 5 caracteres");
 }
 
-if(!Validation::validateCnpj($providerCnpj)){
+if (!Validation::validateCnpj($providerCnpj)) {
     array_push($error, "O cnpj deve conter pelo 14 digitos");
 }
 
-if($error){
+if ($error) {
     Redirect::redirect(message: $error, type: 'warning');
+} else {
+    $provider = new Provider(
+        cnpj: $providerCnpj,
+        name: $providerName
+    );
 
-}else{
-    $provider = new Provider();
-    $provider->providerName = $providerName;
-    $provider->providerCnpj = $providerCnpj;
-
-    echo '<pre>';
-    var_dump($provider);
-    echo '</pre>';
+    Redirect::redirect("Fornecedor cadastrado com sucesso!!!");
 }

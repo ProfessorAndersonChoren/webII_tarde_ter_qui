@@ -30,7 +30,7 @@
             <section class="columns-2 m-4">
                 <article>
                     <label for="providerCnpj" class="cursor-pointer">CNPJ do Fornecedor</label>
-                    <input type="text" name="providerCnpj" class="border border-blue-600">
+                    <input type="number" name="providerCnpj" class="border border-blue-600">
                 </article>
                 <article>
                     <label for="providerName" class="cursor-pointer">Nome do Fornecedor</label>
@@ -38,7 +38,7 @@
                 </article>
             </section>
             <article class="flex justify-center mt-4">
-                <button type="submit" class="pl-4 pr-4 pt-2 pb-2 rounded text white bg-blue-500">Cadastrar</button>
+                <button type="submit" class="p-4 rounded text-white bg-blue-700">Cadastrar</button>
             </article>
         </form>
     </main>
