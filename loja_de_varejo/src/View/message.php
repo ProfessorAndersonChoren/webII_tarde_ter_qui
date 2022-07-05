@@ -38,6 +38,19 @@
         endif;
         unset($_SESSION['msg_error']);
         ?>
+        <?php
+        if (!empty($_SESSION['msg_warning'])) :
+        ?>
+            <article class="bg-orange-700 rounded w-2/4 text-white flex flex-col justify-center items-center">
+                <ul>
+                    <?= $_SESSION['msg_warning']  ?>
+                </ul>
+                <a href="#" onclick="window.history.back()">Voltar</a>
+            </article>
+        <?php
+        endif;
+        unset($_SESSION['msg_warning']);
+        ?>
     </main>
 </body>
 

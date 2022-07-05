@@ -5,14 +5,12 @@ namespace APP\Controller;
 use APP\Model\Product;
 use APP\Model\Provider;
 use APP\Utils\Redirect;
-
-use function APP\Utils\redirect;
+use APP\Model\Validation;
 
 require_once '../../vendor/autoload.php';
-require_once '../Utils/Redirect.php';
 
 if (empty($_POST)) {
-    redirect(
+    Redirect::redirect(
         message: 'Requisição inválida!!!',
         type: 'error'
     );
@@ -24,15 +22,36 @@ $productProvider = $_POST['provider'];
 $productCost = $_POST['cost'];
 $productQuantity = $_POST['quantity'];
 
-$product = new Product();
-$product->barCode = $productBarCode;
-$product->name = $productName;
-$product->stock = $productQuantity;
-$product->provider = new Provider();
-$product->price = 0;
+$error = array();
 
-echo '<pre>';
-var_dump($product);
-echo '</pre>';
+if (!Validation::validateBarCode($productBarCode)) {
+    array_push($error, 'O código de barra do produto é inválido!!!');
+}
 
-// redirect('Produto cadastrado com sucesso!!!');
+if (!Validation::validateName($productName)) {
+    array_push($error, 'O nome do produto deve conter ao menos 5 caracteres!!!');
+}
+
+if (!Validation::validateNumber($productCost)) {
+    array_push($error, 'O custo de aquisição do produto deve ser maior que zero!!!');
+}
+
+if (!Validation::validateNumber($productQuantity)) {
+    array_push($error, 'A quantidade em estoque deve ser maior que zero!!!');
+}
+
+if ($error) { // Se o array tiver elementos
+    Redirect::redirect(
+        message: $error,
+        type: 'warning'
+    );
+} else { // Se o array NÃO tiver elementos
+    $product = new Product();
+    $product->barCode = $productBarCode;
+    $product->name = $productName;
+    $product->stock = $productQuantity;
+    $product->provider = new Provider();
+    $product->price = 0;
+
+    Redirect::redirect('Produto cadastrado com sucesso!!!');
+}
