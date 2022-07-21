@@ -14,19 +14,22 @@
         <nav class="bg-blue-400">
             <ul class="flex">
                 <li class="mr-3">
-                    <a href="../../index.html">Home</a>
+                    <a href="#">Home</a>
                 </li>
                 <li class="mr-3">
-                    <a href="#">Cadastro de produtos</a>
+                    <a href="form_add_product.php">Cadastro de produtos</a>
                 </li>
                 <li>
                     <a href="form_add_provider.php">Cadastro de fornecedores</a>
+                </li>
+                <li>
+                    <a href="../Controller/Product.php?operation=list">Listar produtos</a>
                 </li>
             </ul>
         </nav>
     </header>
     <main>
-        <form action="../Controller/Product.php" method="POST">
+        <form action="../Controller/Product.php?operation=insert" method="POST">
             <section class="columns-3 m-4">
                 <article>
                     <label for="barCode" class="cursor-pointer">Código de barra: </label>

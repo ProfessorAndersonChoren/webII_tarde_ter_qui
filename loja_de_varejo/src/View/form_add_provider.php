@@ -14,13 +14,16 @@
         <nav class="bg-blue-400">
             <ul class="flex">
                 <li class="mr-3">
-                    <a href="../../index.html">Home</a>
+                    <a href="#">Home</a>
+                </li>
+                <li class="mr-3">
+                    <a href="form_add_product.php">Cadastro de produtos</a>
                 </li>
                 <li>
-                    <a href="../View/form_add_product.php">Cadastro de produtos</a>
+                    <a href="form_add_provider.php">Cadastro de fornecedores</a>
                 </li>
                 <li>
-                    <a class="ml-3" href="#">Cadastro de fornecedores</a>
+                    <a href="../Controller/Product.php?operation=list">Listar produtos</a>
                 </li>
             </ul>
         </nav>
