@@ -1,5 +1,5 @@
-create database if not exists retail_store_monday;
-use retail_store_monday;
+create database if not exists retail_store_tuesday;
+use retail_store_tuesday;
 create table if not exists product(
 	product_code smallint primary key auto_increment,
 	product_name varchar(30) not null,
